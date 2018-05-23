@@ -1,0 +1,9 @@
+{
+  "name": "wtracker",
+  "description": "",
+  "profile": "wtracker",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::767605993600:role/wtracker_lambda_function",
+  "environment": {}
+}
