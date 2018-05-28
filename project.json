@@ -5,5 +5,11 @@
   "memory": 128,
   "timeout": 5,
   "role": "arn:aws:iam::767605993600:role/wtracker_lambda_function",
-  "environment": {}
+  "environment": {},
+  "handler": "lib/index.handle",
+  "runtime": "nodejs6.10",
+  "hooks": {
+    "build": "../../node_modules/.bin/webpack --config ../../webpack.config.js --bail",
+    "clean": "rm -rf lib"
+  }
 }

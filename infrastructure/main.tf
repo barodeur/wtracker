@@ -60,3 +60,21 @@ resource "aws_lambda_permission" "allow_ses" {
   source_account = "767605993600"
   principal      = "ses.amazonaws.com"
 }
+
+resource "aws_dynamodb_table" "records_table" {
+  name           = "wtracker-dev-records"
+  read_capacity  = 1
+  write_capacity = 1
+  hash_key       = "partition"
+  range_key      = "created_at"
+
+  attribute {
+    name = "partition"
+    type = "S"
+  }
+
+  attribute {
+    name = "created_at"
+    type = "S"
+  }
+}
